@@ -9,8 +9,8 @@ const rubik = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Frontend Quizz App",
-  description: "A frontend quiz app built with Next.js",
+  title: "CSA Quizzy",
+  description: "A CSA quizzy app built with Next.js",
 };
 
 export default function RootLayout({
@@ -21,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={rubik.className}>
-    
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
