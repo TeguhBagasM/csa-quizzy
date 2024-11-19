@@ -12,18 +12,11 @@ type AnswersProps = {
   goNextQuestion: () => void;
 };
 
-const Answers = ({
-  data,
-  handleAnswer,
-  questionId,
-  goNextQuestion,
-}: AnswersProps) => {
+const Answers = ({ data, handleAnswer, questionId, goNextQuestion }: AnswersProps) => {
   const [selectedAns, setSelectedAns] = useState("");
   const [submitted, setSubmitted] = useState<boolean>(false);
   const { questions, onCompleteQuestions } = useQuestionStore();
-  const isCorrectUserAnswer = questions.find(
-    (q) => q.id === questionId
-  )?.isCorrectUserAnswer;
+  const isCorrectUserAnswer = questions.find((q) => q.id === questionId)?.isCorrectUserAnswer;
 
   const answerLabels = ["A", "B", "C", "D"];
 
@@ -70,7 +63,7 @@ const Answers = ({
 
       <button
         onClick={handleSubmit}
-        className="w-full bg-purple py-4 px-5 rounded-xl shadow-lg text-white font-semibold text-lg text-center"
+        className="w-full bg-blue-500 py-4 px-5 rounded-xl shadow-lg text-white font-semibold text-lg text-center"
       >
         {submitted ? "Next Question" : "Submit Answer"}
       </button>

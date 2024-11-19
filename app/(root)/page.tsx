@@ -67,7 +67,7 @@ export default function Home() {
           >
             <Score />
             <button
-              className="w-full bg-purple py-4 px-5 rounded-xl shadow-lg text-white font-semibold text-lg text-center"
+              className="w-full bg-blue-500 py-4 px-5 rounded-xl shadow-lg text-white font-semibold text-lg text-center"
               onClick={reset}
             >
               Play Again

@@ -32,7 +32,7 @@ const Answer = ({
         <span
           className={cn(
             selectedAns === answer
-              ? "bg-purple text-white"
+              ? "bg-blue-500 text-white"
               : "bg-white dark:text-dark-blue group-hover:text-purple group-hover:bg-[#F6E7FF] transition-all",
             "text-lg rounded-lg py-2 px-4  ",
             isCorrectUserAnswer === false && selectedAns === answer && "bg-red",
@@ -44,22 +44,12 @@ const Answer = ({
         <span className="xl:text-lg">{answer}</span>
         {isCorrectUserAnswer && selectedAns === answer && (
           <span className="text-green-500 ml-auto">
-            <Image
-              src="/assets/images/icon-correct.svg"
-              alt="check"
-              width={30}
-              height={30}
-            />
+            <Image src="/assets/images/icon-correct.svg" alt="check" width={30} height={30} />
           </span>
         )}
         {isCorrectUserAnswer === false && selectedAns === answer && (
           <span className="text-red-500 ml-auto">
-            <Image
-              src="/assets/images/icon-error.svg"
-              alt="cross"
-              width={30}
-              height={30}
-            />
+            <Image src="/assets/images/icon-error.svg" alt="cross" width={30} height={30} />
           </span>
         )}
       </button>
