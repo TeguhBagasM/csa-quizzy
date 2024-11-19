@@ -19,9 +19,7 @@ interface State {
 }
 
 const API_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://frontend-quizz-app-five.vercel.app/"
-    : "http://localhost:3000/";
+  process.env.NODE_ENV === "production" ? "https://csa-quizzy.vercel.app/" : "http://localhost:3000/";
 
 export const useQuestionStore = create<State>()(
   persist(
@@ -52,15 +50,11 @@ export const useQuestionStore = create<State>()(
           // usar el structuredClone para clonar el objeto
           const newQuestions = structuredClone(questions);
           // encontramos el índice de la pregunta
-          const questionIndex = newQuestions.findIndex(
-            (q) => q.id === questionId
-          );
+          const questionIndex = newQuestions.findIndex((q) => q.id === questionId);
           // obtenemos la información de la pregunta
           const questionInfo = newQuestions[questionIndex];
           // averiguamos si el usuario ha seleccionado la respuesta correcta
-          const isCorrectUserAnswer =
-            questionInfo.answer === selectedAnswer;
-
+          const isCorrectUserAnswer = questionInfo.answer === selectedAnswer;
 
           // cambiar esta información en la copia de la pregunta
           newQuestions[questionIndex] = {
