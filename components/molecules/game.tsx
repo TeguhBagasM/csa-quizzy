@@ -9,8 +9,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Game = () => {
-  const { questions, currentQuestion, selectAnswer, goNextQuestion } =
-    useQuestionStore();
+  const { questions, currentQuestion, selectAnswer, goNextQuestion } = useQuestionStore();
   const question = questions[currentQuestion];
 
   const [shouldAnimateQuestion, setShouldAnimateQuestion] = useState(false);
@@ -38,7 +37,7 @@ const Game = () => {
               key={currentQuestion}
               className="flex flex-col gap-4"
             >
-              <p className="italic xs:text-sm md:text-md text-gray-navy dark:text-light-blue xl:text-xl" >
+              <p className="italic xs:text-sm md:text-md text-gray-navy dark:text-light-blue xl:text-xl">
                 Question {currentQuestion + 1} of {questions.length}
               </p>
               <CurrentQuestion data={question} />
@@ -59,10 +58,7 @@ const Game = () => {
               className="xs:mt-2 lg:mt-auto xl:mt-20 w-full "
               key={currentQuestion} // Asegúrate de proporcionar una clave única para que React maneje las animaciones correctamente
             >
-              <Progress
-                total={questions.length}
-                currentIndex={currentQuestion + 1}
-              />
+              <Progress total={questions.length} currentIndex={currentQuestion + 1} />
             </MotionDiv>
           )}
         </AnimatePresence>
